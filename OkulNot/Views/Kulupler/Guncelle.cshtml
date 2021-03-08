@@ -1,0 +1,18 @@
+﻿@model OkulNot.Models.EntityFramework.KULUPLER 
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Guncelle</h2>
+@using(Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(k=>k.KULUPAD)
+        @Html.TextBoxFor(k=>k.KULUPAD)
+    </div>
+    @Html.HiddenFor(k=>k.KULUPID)
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}

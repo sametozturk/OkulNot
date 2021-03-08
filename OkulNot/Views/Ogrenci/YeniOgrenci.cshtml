@@ -1,0 +1,36 @@
+﻿@using OkulNot.Models.EntityFramework
+@model  OGRENCILER
+@{
+    ViewBag.Title = "YeniOgrenci";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni Öğrenci Ekle</h2>
+
+<form class="form-control" method="post">
+    <div>
+        <label>Öğrenci Adı</label>
+        <input type="text" class="form-control" name="OGRAD" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Soyad</label>
+        <input type="text" class="form-control" name="OGRSOYAD" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Foto</label>
+        <input type="text" class="form-control" name="OGRFOTO" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Cinsiyet</label>
+        <input type="text" class="form-control" name="OGRCINSIYET" />
+        @Html.DropDownListFor(m => m.OGRCINSIYET, (List<SelectListItem>)ViewBag.deger1, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Kulup</label>
+        @Html.DropDownListFor(m => m.KULUPLER.KULUPID, (List<SelectListItem>)ViewBag.deger, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:30px">
+        <button class="btn btn-primary">Yeni Öğrenci Ekle</button>
+    </div>
+
+</form>

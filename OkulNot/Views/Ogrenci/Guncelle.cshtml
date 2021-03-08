@@ -1,0 +1,37 @@
+﻿@model OkulNot.Models.EntityFramework.OGRENCILER
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Guncelle</h2>
+@using (Html.BeginForm())
+{
+<div class="form">
+    <div class="form-group">
+        @Html.LabelFor(k => k.OGRAD)
+        @Html.TextBoxFor(k => k.OGRAD)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.OGRSOYAD)
+        @Html.TextBoxFor(k => k.OGRSOYAD)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.OGRFOTO)
+        @Html.TextBoxFor(k => k.OGRFOTO)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.OGRKULUP)
+        @Html.DropDownListFor(k => k.KULUPLER.KULUPID, (List<SelectListItem>)ViewBag.deger, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.OGRCINSIYET)
+        @Html.TextBoxFor(k => k.OGRCINSIYET)
+    </div>
+
+    @Html.HiddenFor(k => k.OGRID)
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+</div>
+}

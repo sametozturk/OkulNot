@@ -1,0 +1,35 @@
+﻿@using OkulNot.Models.EntityFramework
+@model List<OGRENCILER> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>OGRENCI ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>CINSIYET</th>
+        <th>KULUP</th>
+        <th>İŞLEMLER</th>
+    </tr>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.OGRID</td>
+            <td>@item.OGRAD</td>
+            <td>@item.OGRSOYAD</td>
+            <td>@item.OGRCINSIYET</td>
+            <td>@item.KULUPLER.KULUPAD</td>
+            <td>
+                <a href="/Ogrenci/Sil/@item.OGRID" class="btn btn-danger">Sil</a>
+                <a href="/Ogrenci/Guncelle/@item.OGRID" class="btn btn-success">Güncelle</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/Ogrenci/YeniOgrenci" class="btn btn-primary">Yeni Öğrenci Kaydı</a>
+

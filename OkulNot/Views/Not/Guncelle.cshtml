@@ -1,0 +1,47 @@
+﻿@model OkulNot.Models.EntityFramework.NOTLAR
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Guncelle</h2>
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(k => k.OGRID)
+        @Html.TextBoxFor(k => k.OGRID)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.SINAV1)
+        @Html.TextBoxFor(k => k.SINAV1)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.SINAV2)
+        @Html.TextBoxFor(k => k.SINAV2)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.SINAV3)
+        @Html.TextBoxFor(k => k.SINAV3)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.PROJE)
+        @Html.TextBoxFor(k => k.PROJE,new { @Value = ViewBag.ort, @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.ORTALAMA)
+        @Html.TextBoxFor(k => k.ORTALAMA)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(k => k.DURUM)
+        @Html.TextBoxFor(k => k.DURUM)
+    </div>
+
+    @Html.HiddenFor(k => k.NOTID)
+<div style="margin-top:15px">
+    <button class="btn btn-primary" name="islem" value="Hesapla">Güncelle</button>
+    <br />
+    <br />
+    <button class="btn btn-info" name="islem" value="Guncelle">Güncelle</button>
+    Sonuç = @ViewBag.ort
+</div>
+}
